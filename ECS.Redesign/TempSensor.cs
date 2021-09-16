@@ -23,14 +23,19 @@ namespace ECS.Redesign
     }
     public class FakeTempSensor : ITempSensor
     {
+        private int _temp;
+        public FakeTempSensor(int temp)
+        {
+            _temp = temp;
+        }
         public int GetTemp()
         {
-            throw new NotImplementedException();
+            return _temp;
         }
 
         public bool RunSelfTest()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
