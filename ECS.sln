@@ -7,10 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECS.Legacy", "ECS.Legacy\EC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECS.Redesign", "ECS.Redesign\ECS.Redesign.csproj", "{D59D421A-C1BD-4BBA-A6A0-A08E39EEA3E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECSRedesign.UnitTests", "ECSRedesign.UnitTests\ECSRedesign.UnitTests.csproj", "{4ADC9DC4-C373-4678-8F2F-781157FD135B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECSRedesign.UnitTests", "ECSRedesign.UnitTests\ECSRedesign.UnitTests.csproj", "{4ADC9DC4-C373-4678-8F2F-781157FD135B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D59D421A-C1BD-4BBA-A6A0-A08E39EEA3E3} = {D59D421A-C1BD-4BBA-A6A0-A08E39EEA3E3}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS.Redesign.Nsub.UnitTests", "ECS.Redesign.Nsub.UnitTests\ECS.Redesign.Nsub.UnitTests.csproj", "{6C0D9E4C-17AD-4DB0-ACE0-C5E48FACE5D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,10 @@ Global
 		{4ADC9DC4-C373-4678-8F2F-781157FD135B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ADC9DC4-C373-4678-8F2F-781157FD135B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ADC9DC4-C373-4678-8F2F-781157FD135B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C0D9E4C-17AD-4DB0-ACE0-C5E48FACE5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C0D9E4C-17AD-4DB0-ACE0-C5E48FACE5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C0D9E4C-17AD-4DB0-ACE0-C5E48FACE5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C0D9E4C-17AD-4DB0-ACE0-C5E48FACE5D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
