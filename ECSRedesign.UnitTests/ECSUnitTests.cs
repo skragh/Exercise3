@@ -8,12 +8,13 @@ namespace ECS.Redesign.UnitTests
         private ECS uut;
         private FakeHeater fakeHeater;
         private FakeTempSensor fakeSensor;
+        private int universalThreshold = 25;
         [SetUp]
         public void Setup()
         {
             fakeHeater = new FakeHeater();
             fakeSensor = new FakeTempSensor(30);
-            uut = new ECS(25, fakeSensor,fakeHeater);
+            uut = new ECS(universalThreshold, fakeSensor,fakeHeater);
         }
 
         [Test]
@@ -33,9 +34,33 @@ namespace ECS.Redesign.UnitTests
             Assert.That(fakeHeater.TurnedOn == heatOn);
         }
 
-        //public void ECSRegulate_uut_Temp_AssertHeaterCorrect(int thresh)
-        //{
+        [TestCase(30)]
+        [TestCase(60)]
+        [TestCase(-22)]
+        public void ECS_Threshold_AssertValIsSetAndGet(int threshold)
+        {
+            uut.SetThreshold(threshold);
+            int result = uut.GetThreshold();
+            Assert.That(result == threshold);
+        }
 
-        //}
+        [TestCase(-8)]
+        [TestCase(69)]
+        [TestCase(33)]
+        public void ECS_Temperature_AssertTempHasChanged(int temp)
+        {
+            FakeTempSensor fakeSensor1 = new FakeTempSensor(temp);
+            ECS uut1 = new ECS(universalThreshold, fakeSensor1, fakeHeater);
+            double result = uut1.GetCurTemp();
+            Assert.That(result == temp);
+        }
+
+        //Selftest
+        [Test]
+        public void ECS_SelfTest_AssertHeaterAndSensor()
+        {
+            bool result = uut.RunSelfTest();
+            Assert.That(result == true);
+        }
     }
 }
